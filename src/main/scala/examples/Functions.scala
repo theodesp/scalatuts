@@ -57,5 +57,23 @@ object Functions {
     }
 
     sayHello(addGreeting("World"))
+
+    // Another example of call by name
+    def multiply(a: => Int, b: => Int): Int = {
+      a * b
+    }
+
+    println(multiply(6 + 4, 3)) // multiply(6 + 4, 3) -> multiply(10, 3) -> multiply(10 * 3) -> 30
+
+    // Default values
+    def isAllowedURl(url: String = "default"): String = {
+      if(url.equals("default"))
+        "No URL provided"
+      else
+        "Access allowed"
+    }
+
+    //Stubbed method
+    def getID(): String = ???
   }
 }
