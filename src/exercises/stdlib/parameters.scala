@@ -28,4 +28,20 @@ object parameters extends App {
   }
 
   result // retzelpay
+
+  def repeatedParameterMethod(x: Int, y: String, z: Any*) = {
+    "%d %ss can give you %s".format(x, y, z.mkString(", "))
+  }
+
+  repeatedParameterMethod(3, "egg", "a delicious sandwich", "protein", "high cholesterol") // 3 eggs can give you a delicious sandwich, protein, high cholesterol
+
+  repeatedParameterMethod(3, "egg", List("a delicious sandwich", "protein", "high cholesterol"))
+
+  repeatedParameterMethod(
+    3,
+    "egg",
+    List("a delicious sandwich", "protein", "high cholesterol"): _*
+  )
+
+
 }
